@@ -12,5 +12,6 @@ task "Install Basics? (Y/n)" "./bin/install-basic.sh"
 task "Install Docker? (Y/n)" "./bin/install-docker.sh"
 task "Install Ansible? (Y/n)" "./bin/install-ansible.sh"
 task "Setup GIT (Y/n)" "./bin/setup-git.sh"
+task "Install Oh-My-ZSH? (Y/n)" "./bin/install-oh-my-zsh.sh"
 
 ./bin/output.sh "Finish. Have Fun"
