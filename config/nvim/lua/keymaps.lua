@@ -26,4 +26,3 @@ map("n", "<leader>f", "<cmd>Telescope live_grep<cr>", opts)
 map("n", "<leader>o", "<cmd>lua vim.lsp.buf.format { async = true}<cr>", opts)
 map('n', '<leader>d', ':lua vim.lsp.buf.hover()<cr>', opts)
 map("n", "<leader>k", "<cmd>NvimTreeToggle<CR>", opts)
-
