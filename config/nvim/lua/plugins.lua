@@ -82,6 +82,27 @@ end
 
 
 --------------------------------------------------------------------------------
+-- LSP
+--------------------------------------------------------------------------------
+use({ -- Configure LSP client and Use an LSP server installer.
+    "neovim/nvim-lspconfig",
+    requires = {
+        "williamboman/nvim-lsp-installer", -- Installs servers within neovim
+        "onsails/lspkind-nvim", -- adds vscode-like pictograms to neovim built-in lsp
+        "b0o/schemastore.nvim", -- Auto validation some json files like package.json or .esltitrc.json
+    },
+    config = function()
+        require("config.lsp")
+    end,
+})
+
+use({
+    "ray-x/lsp_signature.nvim",
+    config = function()
+        require("config.lsp-signature")
+    end,
+})
+--------------------------------------------------------------------------------
 -- Theme
 --------------------------------------------------------------------------------
 use({ "Shatur/neovim-ayu"})

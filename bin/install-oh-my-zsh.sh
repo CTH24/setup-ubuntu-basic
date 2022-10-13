@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 SCRIPT_PATH=$( dirname "$0" )
 CONFIG_PATH=$( builtin cd "${SCRIPT_PATH}"/../config || exit; pwd )
 
