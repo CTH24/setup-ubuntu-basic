@@ -35,3 +35,4 @@ vim.g.undodir = "~/.config/nvim/undodir"
 vim.g.undofile = true
 vim.o.ls = 0
 vim.o.ch = 0
+

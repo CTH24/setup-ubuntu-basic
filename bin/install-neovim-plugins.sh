@@ -16,8 +16,5 @@ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 "${SCRIPT_PATH}"/header.sh "neovim: TSUpdateSync"
 nvim --headless -c 'TSUpdateSync all' -c 'q'
 
-"${SCRIPT_PATH}"/header.sh "neovim: allSync maintained"
-nvim --headless -c 'allSync maintained' -c q
-
 "${SCRIPT_PATH}"/header.sh "neovim: UpdateRemotePlugins"
-nvim --headless -c 'UpdateRemotePlugins' -c q
+nvim --headless -c 'UpdateRemotePlugins' -c 'q'

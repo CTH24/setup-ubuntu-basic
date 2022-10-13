@@ -46,7 +46,6 @@ local use = packer.use
 
 
 
-
 --------------------------------------------------------------------------------
 -- Packer
 --------------------------------------------------------------------------------
@@ -84,14 +83,17 @@ end
 --------------------------------------------------------------------------------
 -- LSP
 --------------------------------------------------------------------------------
-use({ -- Configure LSP client and Use an LSP server installer.
+use({
     "neovim/nvim-lspconfig",
     requires = {
-        "williamboman/nvim-lsp-installer", -- Installs servers within neovim
-        "onsails/lspkind-nvim", -- adds vscode-like pictograms to neovim built-in lsp
-        "b0o/schemastore.nvim", -- Auto validation some json files like package.json or .esltitrc.json
+        "williamboman/nvim-lsp-installer",
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "onsails/lspkind-nvim",
+        "b0o/schemastore.nvim",
     },
     config = function()
+        require("mason").setup()
         require("config.lsp")
     end,
 })
@@ -102,7 +104,71 @@ use({
         require("config.lsp-signature")
     end,
 })
+
+
+
+
+--------------------------------------------------------------------------------
+-- Telescope
+--------------------------------------------------------------------------------
+use({ -- Telescope: The swiws army knife of searching
+    "nvim-telescope/telescope.nvim",
+    requires = {
+        "nvim-lua/plenary.nvim",
+        {
+            "nvim-telescope/telescope-frecency.nvim", -- Better sorting algorithm
+            "tami5/sqlite.lua",
+        },
+        "nvim-telescope/telescope-ui-select.nvim",
+        "nvim-telescope/telescope-node-modules.nvim",
+        "nvim-telescope/telescope-live-grep-raw.nvim",
+        "nvim-telescope/telescope-symbols.nvim",
+        "nvim-telescope/telescope-project.nvim",
+    },
+    config = function()
+        require("config.telescope")
+    end,
+})
+
+
+
+
+--------------------------------------------------------------------------------
+-- CMP
+--------------------------------------------------------------------------------
+use({
+    "hrsh7th/nvim-cmp",
+    requires = {
+        "onsails/lspkind-nvim", -- Icons on the popups
+        "hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
+        "hrsh7th/cmp-buffer", -- Buffer source for nvim-cmp
+        "saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-mcp
+        "hrsh7th/cmp-path", -- path completions
+        "hrsh7th/cmp-cmdline", -- cmdline completions
+        "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+        "L3MON4D3/LuaSnip", -- Snippet engine
+    },
+    config = function()
+        require("config.cmp")
+    end,
+})
+
+
+
+--------------------------------------------------------------------------------
+-- GitSigns
+--------------------------------------------------------------------------------
+use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+        require('gitsigns').setup()
+    end
+}
+
+
+
+
 --------------------------------------------------------------------------------
 -- Theme
 --------------------------------------------------------------------------------
-use({ "Shatur/neovim-ayu"})
+use({ "Shatur/neovim-ayu" })
