@@ -25,13 +25,17 @@ require("nvim-tree").setup({
     view = {
         width = 50,
         side = "left",
+        number = false,
+        relativenumber = false,
     },
+    update_cwd = true,
     renderer = {
+        add_trailing = false,
         indent_markers = {
             enable = true,
         },
         icons = {
-            git_placement = "before",
+            git_placement = "after",
         },
     },
     diagnostics = {
@@ -39,7 +43,9 @@ require("nvim-tree").setup({
         show_on_dirs = false,
     },
     git = {
+        enable = true,
         ignore = false,
+        timeout = 500,
     },
     actions = {
         open_file = {

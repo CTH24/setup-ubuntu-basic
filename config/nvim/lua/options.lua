@@ -16,7 +16,7 @@ vim.opt.swapfile = false -- Do not leave any backup files
 vim.opt.mouse = "i" -- Enable mouse on insert mode
 vim.opt.showmatch = true -- Highlights the matching parenthesis
 vim.opt.termguicolors = true -- Required for some themes
-vim.opt.foldlevel = 1         -- Do not fold inside folds. Better for markdown and PHP classes
+vim.opt.foldlevel = 1 -- Do not fold inside folds. Better for markdown and PHP classes
 vim.opt.cursorline = true -- Highlight the current cursor line (Can slow the UI)
 vim.opt.signcolumn = "yes" -- Always show the sign-column, otherwise it would shift the text
 vim.opt.hidden = true -- Allow multiple buffers
@@ -35,4 +35,7 @@ vim.g.undodir = "~/.config/nvim/undodir"
 vim.g.undofile = true
 vim.o.ls = 0
 vim.o.ch = 0
-
+vim.opt.fillchars = vim.opt.fillchars + 'eob: '
+vim.opt.fillchars:append {
+    stl = ' ',
+}
