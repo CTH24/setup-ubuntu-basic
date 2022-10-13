@@ -14,6 +14,7 @@ export PATH="$PATH:$HOME/go/bin"
 
 
 
+
 ###############################################################################
 #                           Export Variables
 ###############################################################################
@@ -59,6 +60,7 @@ plugins=(
 
 alias today='date +"%F %A %R"'
 alias bat='batcat'
+alias gs="git status"
 alias gcp='git-commit-and-push'
 alias nah="git reset --hard && git clean -df"
 alias wip="git add . && git commit -m 'WIP'"
