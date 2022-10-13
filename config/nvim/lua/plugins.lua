@@ -227,6 +227,35 @@ use {
 
 
 --------------------------------------------------------------------------------
+-- Copilot
+--------------------------------------------------------------------------------
+use {
+    "zbirenbaum/copilot.lua",
+    event = { "VimEnter" },
+    config = function()
+        vim.defer_fn(function()
+            require "config.copilot"
+        end, 100)
+    end,
+}
+
+-- load file
+
+
+use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+        require("copilot_cmp").setup {
+            method = "getCompletionsCycling",
+        }
+    end
+}
+
+
+
+
+--------------------------------------------------------------------------------
 -- Theme
 --------------------------------------------------------------------------------
 use({ "Shatur/neovim-ayu" })
