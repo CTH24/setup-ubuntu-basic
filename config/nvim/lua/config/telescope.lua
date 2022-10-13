@@ -3,6 +3,7 @@
 local telescope = require("telescope")
 
 telescope.setup({
+
     defaults = {
         mappings = {
             i = {
@@ -11,6 +12,7 @@ telescope.setup({
         },
         color_devicons = true,
     },
+
     extensions = {
         ["ui-select"] = {
             require("telescope.themes").get_dropdown({
@@ -21,8 +23,8 @@ telescope.setup({
             sessions_dir = vim.fn.stdpath('data') .. '/session/',
         }
     },
-    pickers = {
 
+    pickers = {
 
         lsp_definitions = {
             theme = "ivy",

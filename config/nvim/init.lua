@@ -4,8 +4,10 @@ require("options")
 require("plugins")
 require("keymaps")
 
+
 -- Remove Tilde
 vim.wo.fillchars = 'eob: '
+
 
 -- Remember Cursor Position
 vim.cmd([[
@@ -15,6 +17,39 @@ augroup vimrc-remember-cursor-position
 augroup END
 ]])
 
+--NVIM-Tree
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
+require("nvim-tree").setup({
+    view = {
+        width = 50,
+        side = "left",
+    },
+    renderer = {
+        indent_markers = {
+            enable = true,
+        },
+        icons = {
+            git_placement = "before",
+        },
+    },
+    diagnostics = {
+        enable = true,
+        show_on_dirs = false,
+    },
+    git = {
+        ignore = false,
+    },
+    actions = {
+        open_file = {
+            quit_on_open = true,
+            resize_window = true,
+        },
+    },
+})
+
+-- Git signs
 vim.cmd([[command! Diffsplit execute "Gitsigns diffthis"]])
 
 -- Theme

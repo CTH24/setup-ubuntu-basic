@@ -1,13 +1,16 @@
 -- lua/config/lsp.lua
 
+
 local lsp_installer = require("nvim-lsp-installer")
 local lspkind = require("lspkind")
 local schemastore = require("schemastore")
+
 
 -- Add icons to the popup
 lspkind.init({
     mode = "symbol",
 })
+
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -16,6 +19,7 @@ vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -196,6 +200,7 @@ lsp_installer.on_server_ready(function(server)
     })
 end)
 
+
 -- This LSP servers will be auto-installed on first run
 local servers = vim.g.lsp_servers or {}
 for _, name in pairs(servers) do
@@ -206,9 +211,9 @@ for _, name in pairs(servers) do
     end
 end
 
+
 -- Decluter editor by hiding "inline" diagnostic messages (it's just too noisy)
 vim.diagnostic.config({
-
 
     signs = {
         active = true,
@@ -219,10 +224,12 @@ vim.diagnostic.config({
             { name = "DiagnosticSignInfo", text = "" },
         },
     },
+
     virtual_text = true,
     update_in_insert = true,
     underline = true,
     severity_sort = true,
+
     float = {
         focusable = false,
         style = "minimal",
@@ -240,6 +247,7 @@ vim.diagnostic.config({
         end,
     },
 })
+
 
 -- Change the E and W in the diagnostics gutter to symbols.
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }

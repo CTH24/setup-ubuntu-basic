@@ -1,11 +1,15 @@
 -- lua/config/nvim-treesitter.lua
 
+
 require("nvim-treesitter.configs").setup({
+
     sync_installed = true,
+
     highlight = {
-        enable = true, -- This is a MUST
+        enable = true,
         additional_vim_regex_highlighting = false,
     },
+
     indent = {
         enable = true, -- If indent does not work in PHP, set `additional_vim_regex_highlighting = { "php" } `
     },
@@ -25,7 +29,9 @@ require("nvim-treesitter.configs").setup({
         extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
         max_file_lines = nil, -- Do not enable for files with more than n lines, int
     },
+
 })
+
 
 -- Enable folds (zc and zo) on functions and classes but not by default
 vim.cmd([[

@@ -8,7 +8,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 
 "${SCRIPT_PATH}"/header.sh "Install Docker"
 sudo apt update
-sudo apt install docker-ce
+sudo apt install -y docker-ce
 sudo docker --version
 
 "${SCRIPT_PATH}"/header.sh "Add User to Docker Group"
