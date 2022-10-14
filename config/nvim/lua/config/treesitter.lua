@@ -3,6 +3,10 @@
 
 require("nvim-treesitter.configs").setup({
 
+    ensure_installed = { "php", "lua", "javascript", "html", "css", "scss", "twig", "bash", "go", "c", "json", "markdown",
+        "python", "ruby", "rust", "sql", "typescript", "vue", "yaml", "cpp", "dockerfile", "gitignore", "graphql",
+        "regex" },
+
     sync_installed = true,
 
     highlight = {
@@ -15,13 +19,13 @@ require("nvim-treesitter.configs").setup({
     },
 
     incremental_selection = {
-         enable = true, -- Enable selection of CODE blocks
-         keymaps = {
-             init_selection = "gnn",
-             node_incremental = "grn",
-             scope_incremental = "grc",
-             node_decremental = "grm",
-         },
+        enable = true, -- Enable selection of CODE blocks
+        keymaps = {
+            init_selection = "gnn",
+            node_incremental = "grn",
+            scope_incremental = "grc",
+            node_decremental = "grm",
+        },
     },
 
     rainbow = {
