@@ -49,4 +49,3 @@ map("n", "<leader>l", ":Copilot suggestion toggle_auto_trigger<CR>", opts)
 
 -- Hilfe
 map("n", "<leader>m", "<cmd>Telescope man_pages<CR>", opts)
-map("n", "<leader>h", "<cmd>Telescope help_tags<cr>", opts)
