@@ -14,6 +14,7 @@ cp -rv "${CONFIG_PATH}"/nvim /home/"${USER}"/.config
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 "${SCRIPT_PATH}"/header.sh "neovim: TSUpdateSync"
+npm i -g tree-sitter-cli
 nvim --headless -c 'TSUpdateSync all' -c 'q'
 
 "${SCRIPT_PATH}"/header.sh "neovim: UpdateRemotePlugins"
