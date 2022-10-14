@@ -33,6 +33,7 @@ vim.g.scrolloff = 8
 vim.g.smartindent = true
 vim.g.undodir = "~/.config/nvim/undodir"
 vim.g.undofile = true
+vim.g.exrc = true
 vim.o.ls = 1
 vim.o.ch = 1
 vim.opt.fillchars = vim.opt.fillchars + 'eob: '
