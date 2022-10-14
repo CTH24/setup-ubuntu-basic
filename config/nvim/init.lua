@@ -4,6 +4,11 @@ require("options")
 require("plugins")
 require("keymaps")
 
+
+vim.cmd([[
+set exrc
+]])
+
 -- Winbar
 require("config.winbar")
 vim.api.nvim_create_autocmd(
