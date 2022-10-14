@@ -110,7 +110,12 @@ use({
 })
 
 
-
+--------------------------------------------------------------------------------
+-- CommandPalette
+--------------------------------------------------------------------------------
+use {
+    "LinArcX/telescope-command-palette.nvim",
+}
 
 --------------------------------------------------------------------------------
 -- Telescope
@@ -240,10 +245,6 @@ use {
         end, 100)
     end,
 }
-
--- load file
-
-
 use {
     "zbirenbaum/copilot-cmp",
     after = { "copilot.lua" },
@@ -287,23 +288,35 @@ use({ -- Allows you to use `:Rg <search_string>` for fast project search
 
 
 
-
 --------------------------------------------------------------------------------
--- Symbols
+-- CheatSheet
 --------------------------------------------------------------------------------
 
+use {
+    'sudormrfbin/cheatsheet.nvim',
+
+    requires = {
+        { 'nvim-telescope/telescope.nvim' },
+        { 'nvim-lua/popup.nvim' },
+        { 'nvim-lua/plenary.nvim' },
+    }
+}
 
 
 --------------------------------------------------------------------------------
 -- Theme
 --------------------------------------------------------------------------------
 use({ "Shatur/neovim-ayu" })
-use { "SmiteshP/nvim-gps",
+use {
+    "SmiteshP/nvim-gps",
     requires = "nvim-treesitter/nvim-treesitter",
     config = function()
         require("config.gps")
     end,
 }
+
+
+
 
 
 if PACKER_BOOTSTRAP then
