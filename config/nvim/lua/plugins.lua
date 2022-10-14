@@ -78,10 +78,7 @@ use({
         require("config.treesitter")
     end,
 })
-
-if PACKER_BOOTSTRAP then
-    require("packer").sync()
-end
+use('p00f/nvim-ts-rainbow')
 
 
 
@@ -135,6 +132,9 @@ use({ -- Telescope: The swiws army knife of searching
         require("config.telescope")
     end,
 })
+use({ 'JoseConseco/telescope_sessions_picker.nvim' })
+use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
 
 
 
@@ -253,9 +253,43 @@ use {
 }
 
 
+--------------------------------------------------------------------------------
+-- Whichkey
+--------------------------------------------------------------------------------
+use({ -- Whichkey: popup help for keymaps
+    "folke/which-key.nvim",
+    config = function()
+        require("config.which-key")
+    end,
+})
+
+
+--------------------------------------------------------------------------------
+-- Wilder
+--------------------------------------------------------------------------------
+use { 'romgrk/fzy-lua-native' }
+use {
+    'gelguy/wilder.nvim',
+    config = function()
+        require("config.wilder") -- config goes here
+    end,
+}
+use({ -- Allows you to use `:Rg <search_string>` for fast project search
+    "rinx/nvim-ripgrep",
+    config = function()
+        require("nvim-ripgrep").setup({
+            open_qf_fn = require("nvim-ripgrep.extensions").trouble_open_qf,
+        })
+    end,
+})
 
 
 --------------------------------------------------------------------------------
 -- Theme
 --------------------------------------------------------------------------------
 use({ "Shatur/neovim-ayu" })
+
+
+if PACKER_BOOTSTRAP then
+    require("packer").sync()
+end

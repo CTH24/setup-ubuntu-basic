@@ -193,7 +193,7 @@ end
 lsp_installer.on_server_ready(function(server)
     server:setup({
         on_attach = on_attach,
-        flags = flags,
+        -- flags = flags,
         settings = settings,
         handlers = handlers,
         capabilities = capabilities,
@@ -255,3 +255,4 @@ for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
