@@ -27,6 +27,8 @@ map("n", "<leader>j", "<cmd>Telescope fd<cr>", opts)
 map("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
 map("n", "<leader>f", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 map("n", "<leader>s", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
+map("n", "<leader>u", "<cmd>Telescope treesitter<cr>", opts)
+
 
 -- VIM
 map("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
