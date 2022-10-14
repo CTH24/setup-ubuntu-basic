@@ -4,6 +4,16 @@ require("options")
 require("plugins")
 require("keymaps")
 
+-- Winbar
+require("config.winbar")
+vim.api.nvim_create_autocmd(
+    { "CursorMoved", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost", "TabClosed" },
+    {
+        callback = function()
+            require("config.winbar").get_winbar()
+        end,
+    }
+)
 
 -- Remove Tilde
 vim.wo.fillchars = 'eob: '

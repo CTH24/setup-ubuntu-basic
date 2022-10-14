@@ -288,6 +288,12 @@ use({ -- Allows you to use `:Rg <search_string>` for fast project search
 -- Theme
 --------------------------------------------------------------------------------
 use({ "Shatur/neovim-ayu" })
+use { "SmiteshP/nvim-gps",
+    requires = "nvim-treesitter/nvim-treesitter",
+    config = function()
+        require("config.gps")
+    end,
+}
 
 
 if PACKER_BOOTSTRAP then
