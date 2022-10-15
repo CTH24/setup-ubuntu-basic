@@ -10,5 +10,5 @@ mason.setup({
 })
 
 lspconfig.setup {
-  automatic_installation = true
+    automatic_installation = true
 }

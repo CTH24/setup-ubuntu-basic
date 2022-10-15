@@ -195,6 +195,11 @@ _G.packer_plugins = {
     path = "/home/daniel/.local/share/nvim/site/pack/packer/start/nvim-ripgrep",
     url = "https://github.com/rinx/nvim-ripgrep"
   },
+  ["nvim-transparent"] = {
+    loaded = true,
+    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/daniel/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
