@@ -1,4 +1,4 @@
--- keymap.lu
+-- keymap.lua
 
 
 --------------------------------------------------------------------------------
@@ -23,6 +23,7 @@ vim.g.maplocalleader = " "
 
 
 
+
 --------------------------------------------------------------------------------
 --  Reload NVIM Configuration
 --------------------------------------------------------------------------------
@@ -30,8 +31,8 @@ vim.g.maplocalleader = " "
 map("n", "<leader>r", ":source $MYVIMRC<CR>", opts)
 
 
-map('n', 'j', 'jzz', opts)
-map('n', 'k', 'kzz', opts)
+map('n', 'j', 'j', opts)
+map('n', 'k', 'k', opts)
 map('n', '<C-u>', '<C-u>zz', opts)
 map('n', '<C-d>', '<C-d>zz', opts)
 
@@ -64,21 +65,9 @@ keymap.set('n', '-', '<C-x>')
 -- Delete a word backwards
 keymap.set('n', 'dw', 'vb"_d')
 
-
--- Save with root permission (not working for now)
---vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
-
--- New tab
 -- Split window
 keymap.set('n', 'ss', ':vsplit<Return><C-w>w')
 keymap.set('n', 'sss', ':split<Return><C-w>w')
-
-keymap.set('', 'sl', '<C-w>l')
-keymap.set('', 'sh', '<C-w>h')
-keymap.set('', 'sk', '<C-w>k')
-keymap.set('', 'sj', '<C-w>j')
-
-
 
 -- Resize window
 keymap.set('n', '<C-w><left>', '<C-w><')
@@ -101,6 +90,7 @@ map("n", "<leader>f", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 map("n", "<leader>s", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
 map("n", "<leader>u", "<cmd>Telescope treesitter<cr>", opts)
 map("n", "<leader>c", "<cmd>Telescope command_palette<cr>", opts)
+map("n", "<leader>/", "<cmd>vsp backlog.md<cr>", opts)
 
 
 -- VIM
@@ -110,7 +100,6 @@ map("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 -- git
 map("n", "<leader>t", "<cmd>Telescope git_branches<cr>", opts)
 map("n", "<leader>i", "<cmd>Telescope git_status<cr>", opts)
-map("n", "<leader>h", "<cmd>Telescope git_bcommits<cr>", opts)
 
 
 -- Code Action

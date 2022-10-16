@@ -33,4 +33,4 @@ local generator = function()
 end
 require('el').setup { generator = generator }
 
-vim.cmd [[hi StatusLine guibg=#3a3a3a]]
+vim.cmd [[highlight StatusLine guibg=#3a3a3a]]

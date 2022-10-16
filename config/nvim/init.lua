@@ -1,17 +1,17 @@
-require('sordok.base')
-require('sordok.highlights')
-require('sordok.keymaps')
-require('sordok.plugins')
+require('cth24.base')
+require('cth24.highlights')
+require('cth24.keymaps')
+require('cth24.plugins')
 
 local has = vim.fn.has
 local is_mac = has "macunix"
 local is_win = has "win32"
 
 if is_mac then
-  require('sordok.macos')
+	require('cth24.macos')
 end
 if is_win then
-  require('sordok.windows')
+	require('cth24.windows')
 end
 
 vim.cmd('colorscheme ayu')

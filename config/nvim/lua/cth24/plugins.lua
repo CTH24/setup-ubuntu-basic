@@ -226,6 +226,34 @@ packer.startup(function(use)
 
 
     --------------------------------------------------------------------------------
+    -- ToggleTerm
+    --------------------------------------------------------------------------------
+
+    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup({
+            open_mapping = [[<c-\>]],
+            shell = vim.o.shell,
+            direction = "float",
+            winblend = 1,
+        })
+    end }
+
+
+    --------------------------------------------------------------------------------
+    -- WhichKey
+    --------------------------------------------------------------------------------
+
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            require("which-key").setup {}
+        end
+    }
+
+
+
+
+    --------------------------------------------------------------------------------
     -- nvim-transparent
     --------------------------------------------------------------------------------
 
@@ -241,7 +269,7 @@ packer.startup(function(use)
 
 
 
-end)
+end) -- packer.startup
 
 
 

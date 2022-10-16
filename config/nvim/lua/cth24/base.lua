@@ -17,7 +17,7 @@ vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.scrolloff = 30
-vim.opt.shell = 'zsh'
+vim.opt.shell = 'fish'
 vim.opt.backupskip = { '/tmp/*', '/private/tmp/*' }
 vim.opt.inccommand = 'split'
 vim.opt.smartcase = true
@@ -54,9 +54,6 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
 
-
-
-
 -- Remember Cursor Position
 vim.cmd([[
 augroup vimrc-remember-cursor-position
@@ -64,9 +61,6 @@ augroup vimrc-remember-cursor-position
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 ]])
-
-
-
 
 -- Highlight YANK
 local autocmd = vim.api.nvim_create_autocmd
@@ -86,3 +80,6 @@ autocmd('TextYankPost', {
 
 -- Remove Tilde
 vim.wo.fillchars = 'eob: '
+
+-- AutoResize
+vim.cmd [[ autocmd VimResized * wincmd = ]]

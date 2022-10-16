@@ -90,6 +90,14 @@ vim.keymap.set('n', ';e', function()
         initial_mode = "normal"
     })
 end)
+
+--map("n", "<leader>h", "<cmd>Telescope git_bcommits<cr>", opts)
+vim.keymap.set('n', '<leader>h', function()
+    builtin.git_bcommits({
+        initial_mode = "normal",
+        cwd = telescope_buffer_dir()
+    })
+end)
 vim.keymap.set("n", ";f", function()
     telescope.extensions.file_browser.file_browser({
         path = "%:p:h",
