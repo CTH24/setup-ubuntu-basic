@@ -114,10 +114,10 @@ _G.packer_plugins = {
     path = "/home/daniel/.local/share/nvim/site/pack/packer/opt/copilot.lua",
     url = "https://github.com/zbirenbaum/copilot.lua"
   },
-  ["feline.nvim"] = {
+  ["express_line.nvim"] = {
     loaded = true,
-    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/feline.nvim",
-    url = "https://github.com/feline-nvim/feline.nvim"
+    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/express_line.nvim",
+    url = "https://github.com/tjdevries/express_line.nvim"
   },
   ["fzy-lua-native"] = {
     loaded = true,
@@ -240,10 +240,10 @@ _G.packer_plugins = {
     path = "/home/daniel/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-markdown"] = {
+  ["vim-fugitive"] = {
     loaded = true,
-    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/vim-markdown",
-    url = "https://github.com/tpope/vim-markdown"
+    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["wilder.nvim"] = {
     loaded = true,
