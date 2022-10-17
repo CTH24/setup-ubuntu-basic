@@ -40,3 +40,7 @@ bindkey = s
 | Keymap | Action        |
 | ------ | ------------- |
 | C-BS   | open Terminal |
+
+## PHP
+
+1. LSP for PHP intelephense
